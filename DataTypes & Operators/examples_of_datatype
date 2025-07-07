@@ -1,0 +1,56 @@
+# 📘 Python Data Types
+
+Python has several built-in data types categorized into:
+
+## ✅ Numeric Types
+| Type     | Description                  | Example           |
+|----------|------------------------------|-------------------|
+| int      | Integer (whole number)       | `x = 10`          |
+| float    | Decimal number               | `y = 3.14`        |
+| complex  | Complex number               | `z = 2 + 3j`      |
+
+## ✅ Sequence Types
+| Type     | Description                  | Example                    |
+|----------|------------------------------|----------------------------|
+| str      | String (text)                | `name = "Drashti"`         |
+| list     | Ordered, mutable collection  | `fruits = ["apple", "banana"]` |
+| tuple    | Ordered, immutable collection| `colors = ("red", "green")` |
+| range    | Sequence of numbers          | `nums = range(5)`          |
+
+## ✅ Mapping Type
+| Type     | Description        | Example                         |
+|----------|--------------------|---------------------------------|
+| dict     | Key-value mapping  | `person = {"name": "Aarav"}`    |
+
+## ✅ Set Types
+| Type       | Description          | Example              |
+|------------|----------------------|----------------------|
+| set        | Unique, unordered    | `s = {1, 2, 3}`      |
+| frozenset  | Immutable set        | `fs = frozenset([4, 5, 6])` |
+
+## ✅ Binary Types
+| Type        | Description              | Example                    |
+|-------------|--------------------------|----------------------------|
+| bytes       | Immutable binary data    | `b = b"hello"`             |
+| bytearray   | Mutable binary data      | `ba = bytearray(5)`        |
+| memoryview  | View on binary data      | `mv = memoryview(b"abc")`  |
+
+## ✅ Special Type
+| Type       | Description              | Example     |
+|------------|--------------------------|-------------|
+| NoneType   | Represents null value    | `x = None`  |
+
+---
+
+### 🔍 Check Data Type
+```python
+x = 10
+print(type(x))  # Output: <class 'int'>
+
+
+Example: memoryview
+data = bytearray(b"abc")
+mv = memoryview(data)
+print(mv[0])     # 97 (ASCII of 'a')
+mv[0] = 65       # Change 'a' to 'A'
+print(data)      # bytearray(b'Abc')
