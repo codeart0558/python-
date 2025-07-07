@@ -1,0 +1,190 @@
+
+In Python, a **tuple** is an **ordered**, **immutable** collection used to store 
+multiple items. Unlike lists, tuples **cannot be changed after creation**.
+
+---
+
+## 🔹 What is a Tuple?
+
+- Tuples are defined using **parentheses `()`** or the `tuple()` constructor.
+- They are **ordered** (maintain insertion order).
+- **Immutable**: Once created, elements cannot be changed or removed.
+- Allow **duplicate** values.
+- Support **indexing**, **slicing**, and **iteration**.
+
+---
+
+## ✅ Syntax
+
+```python
+# With parentheses
+colors = ("red", "green", "blue")
+
+# Without parentheses (tuple packing)
+data = 1, 2, 3
+
+# Using tuple constructor
+nums = tuple([10, 20, 30])
+````
+
+---
+
+## ⚠️ Singleton Tuple Syntax
+
+A tuple with a single element **must include a comma**:
+
+```python
+one_element = (5,)     # ✅ This is a tuple
+not_a_tuple = (5)      # ❌ This is just an integer
+```
+
+---
+
+## 🧠 Tuple Properties
+
+| Property            | Tuple |
+| ------------------- | ----- |
+| Ordered             | ✅ Yes |
+| Mutable             | ❌ No  |
+| Allows Duplicates   | ✅ Yes |
+| Indexable/Sliceable | ✅ Yes |
+
+---
+
+## 🗃️ Accessing Tuple Elements
+
+```python
+fruits = ("apple", "banana", "cherry")
+
+print(fruits[0])     # apple
+print(fruits[-1])    # cherry
+```
+
+---
+
+## ✂️ Slicing Tuples
+
+```python
+numbers = (0, 1, 2, 3, 4, 5)
+
+print(numbers[1:4])     # (1, 2, 3)
+print(numbers[:3])      # (0, 1, 2)
+print(numbers[::-1])    # Reverse: (5, 4, 3, 2, 1, 0)
+```
+
+---
+
+## 🔁 Looping Through a Tuple
+
+```python
+colors = ("red", "green", "blue")
+
+for color in colors:
+    print(color)
+```
+
+---
+
+## ✨ Tuple Methods
+
+Tuples have only **2 built-in methods**:
+
+| Method      | Description                              | Example              |
+| ----------- | ---------------------------------------- | -------------------- |
+| `.count(x)` | Returns number of times `x` appears      | `t.count("a")` → `2` |
+| `.index(x)` | Returns index of first occurrence of `x` | `t.index("a")` → `0` |
+
+```python
+t = ("a", "b", "a", "c")
+
+print(t.count("a"))     # 2
+print(t.index("a"))     # 0
+```
+
+---
+
+## ➕ Tuple Operations
+
+| Operation     | Example                      | Result                 |
+| ------------- | ---------------------------- | ---------------------- |
+| Concatenation | `a + b`                      | Combines two tuples    |
+| Repetition    | `a * 3`                      | Repeats tuple elements |
+| Membership    | `'x' in a`                   | True/False if in tuple |
+| Length        | `len(t)`                     | Number of items        |
+| Min/Max/Sum   | `min(t)`, `max(t)`, `sum(t)` | Numeric-only tuples    |
+
+---
+
+## 📦 Tuple Packing and Unpacking
+
+```python
+# Packing
+person = ("Drashti", 21, "Python")
+
+# Unpacking
+name, age, course = person
+
+print(name)    # Drashti
+print(age)     # 21
+```
+
+---
+
+## 🧊 Nested Tuples
+
+Tuples can contain other tuples or lists:
+
+```python
+matrix = ((1, 2), (3, 4), (5, 6))
+
+print(matrix[1][0])   # 3
+```
+
+---
+
+## 📎 Tuple vs List Comparison
+
+| Feature           | List             | Tuple       |
+| ----------------- | ---------------- | ----------- |
+| Syntax            | `[]`             | `()`        |
+| Mutable           | ✅ Yes            | ❌ No        |
+| Methods           | Many             | Few (2)     |
+| Use Case          | Frequent changes | Fixed data  |
+| Speed             | Slower           | Faster      |
+| Memory Efficiency | More memory      | Less memory |
+
+---
+
+## 🧪 Examples
+
+```python
+# Tuple with mixed data types
+data = ("Drashti", 21, 5.6, True)
+
+# Tuple inside a tuple
+nested = ("A", (1, 2, 3), "B")
+
+# Tuple comprehension (with generator)
+squares = tuple(x**2 for x in range(5))  # (0, 1, 4, 9, 16)
+```
+
+---
+
+## 🔐 Why Tuples Are Immutable?
+
+* **Tuples are faster** and use **less memory**.
+* Useful when you want to ensure **data integrity** (e.g., database records, config values).
+* Can be used as **keys in dictionaries** if they contain only immutable items.
+
+---
+
+## ✅ Summary Table
+
+| Feature           | Tuple                                 |
+| ----------------- | ------------------------------------- |
+| Ordered           | ✅ Yes                                 |
+| Immutable         | ✅ Yes                                 |
+| Allows Duplicates | ✅ Yes                                 |
+| Indexable         | ✅ Yes                                 |
+| Methods           | `.count()`, `.index()`                |
+| Use Case          | Fixed data, performance-critical code |
