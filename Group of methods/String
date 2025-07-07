@@ -1,0 +1,202 @@
+What is String?
+-> In Python, a **string** is a **sequence of characters** used to store text. It can include letters, numbers, symbols, and whitespace.
+
+---
+
+## 🔹 What is a String?
+
+A **string** is defined by enclosing characters in:
+- Single quotes `'...'`
+- Double quotes `"..."`  
+- Triple quotes `'''...'''` or `"""..."""` for multi-line strings
+
+### ✅ Examples:
+
+```python
+s1 = 'Hello'
+s2 = "World"
+s3 = '''This is
+a multi-line string'''
+````
+
+---
+
+## 📌 String Properties
+
+| Property | Value                                     |
+| -------- | ----------------------------------------- |
+| Ordered  | ✅ Yes                                     |
+| Mutable  | ❌ No (Immutable)                          |
+| Iterable | ✅ Yes                                     |
+| Indexing | ✅ Supports positive and negative indexing |
+
+---
+
+## 📦 String Indexing & Slicing
+
+### 🔹 Accessing characters:
+
+```python
+s = "Python"
+print(s[0])    # 'P'
+print(s[-1])   # 'n'
+```
+
+### 🔹 Slicing:
+
+```python
+print(s[1:4])   # 'yth'
+print(s[:3])    # 'Pyt'
+print(s[::2])   # 'Pto'
+print(s[::-1])  # 'nohtyP' (reverse)
+```
+
+---
+
+## 🛠️ Common String Operations
+
+```python
+s1 = "Hello"
+s2 = "World"
+
+# Concatenation
+print(s1 + " " + s2)      # Hello World
+
+# Repetition
+print(s1 * 3)             # HelloHelloHello
+
+# Membership
+print("H" in s1)          # True
+print("z" not in s1)      # True
+
+# Length
+print(len(s1))            # 5
+```
+
+---
+
+## 🧪 String Formatting
+
+### 1. f-strings (Recommended, Python 3.6+)
+
+```python
+name = "Drashti"
+age = 21
+print(f"My name is {name} and I am {age} years old.")
+```
+
+### 2. `str.format()` Method
+
+```python
+print("Name: {}, Age: {}".format(name, age))
+```
+
+### 3. `%` Formatting (Old Style)
+
+```python
+print("Name: %s, Age: %d" % (name, age))
+```
+
+---
+
+## 🔠 Escape Sequences
+
+Used to insert special characters in strings.
+
+| Escape   | Meaning      |
+| -------- | ------------ |
+| `\n`     | New line     |
+| `\t`     | Tab          |
+| `\'`     | Single quote |
+| `\"`     | Double quote |
+| `\\`     | Backslash    |
+| `\uXXXX` | Unicode char |
+
+```python
+print("Line1\nLine2")
+```
+
+---
+
+## 🧼 Raw Strings
+
+Raw strings treat backslashes as literal characters.
+
+```python
+path = r"C:\Users\Drashti\Documents"
+print(path)  # C:\Users\Drashti\Documents
+```
+
+---
+
+## 🧰 Built-in String Methods
+
+Here are the most commonly used string methods with examples.
+
+| Method               | Description                        | Example                                   |
+| -------------------- | ---------------------------------- | ----------------------------------------- |
+| `capitalize()`       | Capitalize first letter            | `"hello".capitalize()` → `'Hello'`        |
+| `lower()`            | Convert to lowercase               | `"HeLLo".lower()` → `'hello'`             |
+| `upper()`            | Convert to uppercase               | `"hi".upper()` → `'HI'`                   |
+| `title()`            | Title-case string                  | `"hello world".title()` → `'Hello World'` |
+| `strip()`            | Remove leading/trailing whitespace | `" hello ".strip()` → `'hello'`           |
+| `lstrip()`           | Left-strip whitespace              | `" hello".lstrip()` → `'hello'`           |
+| `rstrip()`           | Right-strip whitespace             | `"hello ".rstrip()` → `'hello'`           |
+| `replace(a, b)`      | Replace substring                  | `"abc".replace("a", "x")` → `'xbc'`       |
+| `split()`            | Split string into list             | `"a b c".split()` → `['a', 'b', 'c']`     |
+| `join()`             | Join iterable of strings           | `".".join(["a","b"])` → `'a.b'`           |
+| `find(sub)`          | Find index of substring            | `"hello".find("e")` → `1`                 |
+| `rfind(sub)`         | Find last occurrence               | `"hello".rfind("l")` → `3`                |
+| `count(sub)`         | Count substring occurrences        | `"banana".count("a")` → `3`               |
+| `startswith(prefix)` | Check if starts with substring     | `"hello".startswith("he")` → `True`       |
+| `endswith(suffix)`   | Check if ends with substring       | `"world".endswith("ld")` → `True`         |
+| `isalpha()`          | Check if all chars are alphabets   | `"abc".isalpha()` → `True`                |
+| `isdigit()`          | Check if all chars are digits      | `"123".isdigit()` → `True`                |
+| `isalnum()`          | Check if alphanumeric              | `"abc123".isalnum()` → `True`             |
+| `isspace()`          | Check if all chars are whitespace  | `" ".isspace()` → `True`                  |
+| `swapcase()`         | Swap upper/lower case              | `"AbC".swapcase()` → `'aBc'`              |
+| `zfill(width)`       | Pad with zeros on left             | `"5".zfill(3)` → `'005'`                  |
+
+---
+
+## 🎯 String Practice Examples
+
+### 🔹 Count vowels in a string:
+
+```python
+s = "drashti"
+count = 0
+for char in s:
+    if char in "aeiou":
+        count += 1
+print("Vowels:", count)
+```
+
+### 🔹 Reverse a string:
+
+```python
+s = "hello"
+print(s[::-1])  # 'olleh'
+```
+
+### 🔹 Palindrome Check:
+
+```python
+s = "madam"
+if s == s[::-1]:
+    print("Palindrome")
+else:
+    print("Not Palindrome")
+```
+
+---
+
+## 🧠 Summary Table
+
+| Feature      | Description                       |
+| ------------ | --------------------------------- |
+| Immutable    | Cannot change once created        |
+| Indexable    | Access by position                |
+| Iterable     | Can loop through characters       |
+| Sliceable    | Can extract substrings            |
+| Rich Methods | Built-in methods for manipulation |
