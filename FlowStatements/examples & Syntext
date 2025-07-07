@@ -1,0 +1,209 @@
+## ✅ 1. Conditional Statements
+
+Used for decision-making based on conditions.
+
+### 🔹 Syntax:
+
+```python
+if condition:
+    # Code block runs if condition is True
+elif another_condition:
+    # Runs if elif condition is True
+else:
+    # Runs if no above conditions are True
+````
+
+### 🔹 Example:
+
+```python
+age = 18
+
+if age < 18:
+    print("You are a minor.")
+elif age == 18:
+    print("You just became an adult!")
+else:
+    print("You are an adult.")
+```
+
+---
+
+## 🔁 2. Looping Statements
+
+Looping allows code to repeat multiple times.
+
+### ▶️ for Loop
+
+Used to iterate over a sequence (like list, string, range).
+
+### 🔹 Syntax:
+
+```python
+for variable in sequence:
+    # code block
+```
+
+### 🔹 Example:
+
+```python
+fruits = ["apple", "banana", "cherry"]
+
+for fruit in fruits:
+    print(fruit)
+```
+
+With `range()`:
+
+```python
+for i in range(1, 6):
+    print("Number:", i)
+```
+
+---
+
+### ▶️ while Loop
+
+Repeats as long as the condition is `True`.
+
+### 🔹 Syntax:
+
+```python
+while condition:
+    # code block
+```
+
+### 🔹 Example:
+
+```python
+count = 1
+
+while count <= 5:
+    print("Count:", count)
+    count += 1
+```
+
+📛 Infinite loop (be careful!):
+
+```python
+# while True:
+#     print("This will run forever!")
+```
+
+---
+
+## ⏹️ 3. Loop Control Statements
+
+These alter the loop execution:
+
+### 🔹 break
+
+Exits the loop immediately.
+
+```python
+for i in range(10):
+    if i == 5:
+        break
+    print(i)
+# Output: 0 1 2 3 4
+```
+
+### 🔹 continue
+
+Skips current iteration and continues with the next.
+
+```python
+for i in range(5):
+    if i == 2:
+        continue
+    print(i)
+# Output: 0 1 3 4
+```
+
+### 🔹 pass
+
+A placeholder – does nothing. Used when code is not yet implemented.
+
+```python
+for i in range(3):
+    pass  # to be implemented later
+```
+
+---
+
+## ➕ 4. else with Loops
+
+Python allows using `else` with both `for` and `while` loops.
+
+* The `else` block runs only if the loop completes **without** hitting a `break`.
+
+### 🔹 Example (for loop):
+
+```python
+for i in range(5):
+    print(i)
+else:
+    print("Loop completed without break.")
+```
+
+### 🔹 Example (while loop):
+
+```python
+x = 0
+while x < 3:
+    print(x)
+    x += 1
+else:
+    print("Finished looping.")
+```
+
+### ❌ else not executed if break is used:
+
+```python
+for i in range(5):
+    if i == 3:
+        break
+    print(i)
+else:
+    print("This will NOT be printed.")
+```
+
+---
+
+## 📋 Summary Table
+
+| Statement          | Purpose                               |
+| ------------------ | ------------------------------------- |
+| `if / elif / else` | Conditional decision making           |
+| `for`              | Iterate over a sequence               |
+| `while`            | Loop while a condition is true        |
+| `break`            | Exit the loop immediately             |
+| `continue`         | Skip to the next iteration            |
+| `pass`             | Do nothing (used as a placeholder)    |
+| `else` (with loop) | Runs if loop finishes without `break` |
+
+---
+
+## 📌 Real-Life Use Case
+
+### 🔹 Check if a number is prime:
+
+```python
+num = 7
+
+if num > 1:
+    for i in range(2, num):
+        if num % i == 0:
+            print(f"{num} is not a prime number")
+            break
+    else:
+        print(f"{num} is a prime number")
+else:
+    print(f"{num} is not a prime number")
+```
+
+---
+
+## 📘 Notes
+
+* Python does not use `{}` braces. It uses **indentation** to define code blocks.
+* Be consistent with indentation (4 spaces is standard).
