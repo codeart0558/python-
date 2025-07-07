@@ -1,0 +1,77 @@
+Python supports the following types of operators:
+
+---
+
+## ✅ 1. Arithmetic Operators
+| Operator | Description      | Example    | Result |
+|----------|------------------|------------|--------|
+| +        | Addition          | 3 + 2      | 5      |
+| -        | Subtraction       | 5 - 2      | 3      |
+| *        | Multiplication    | 3 * 4      | 12     |
+| /        | Division          | 10 / 2     | 5.0    |
+| //       | Floor Division    | 10 // 3    | 3      |
+| %        | Modulus           | 10 % 3     | 1      |
+| **       | Exponentiation    | 2 ** 3     | 8      |
+
+---
+
+## ✅ 2. Comparison Operators
+| Operator | Description        | Example   | Result |
+|----------|--------------------|-----------|--------|
+| ==       | Equal to           | 5 == 5    | True   |
+| !=       | Not equal to       | 5 != 3    | True   |
+| >        | Greater than       | 7 > 2     | True   |
+| <        | Less than          | 3 < 7     | True   |
+| >=       | Greater or equal   | 5 >= 5    | True   |
+| <=       | Less or equal      | 4 <= 6    | True   |
+
+---
+
+## ✅ 3. Logical Operators
+| Operator | Description            | Example           | Result |
+|----------|------------------------|-------------------|--------|
+| and      | True if both are True  | True and False    | False  |
+| or       | True if one is True    | True or False     | True   |
+| not      | Reverse the result     | not True          | False  |
+
+---
+
+## ✅ 4. Assignment Operators
+| Operator | Example    | Equivalent      |
+|----------|------------|-----------------|
+| =        | x = 5      | Assign value    |
+| +=       | x += 2     | x = x + 2       |
+| -=       | x -= 3     | x = x - 3       |
+| *=       | x *= 2     | x = x * 2       |
+| /=       | x /= 5     | x = x / 5       |
+| //=      | x //= 2    | x = x // 2      |
+| %=       | x %= 3     | x = x % 3       |
+| **=      | x **= 2    | x = x ** 2      |
+
+---
+
+## ✅ 5. Bitwise Operators
+| Operator | Description     | Example   | Result  |
+|----------|-----------------|-----------|---------|
+| &        | AND             | 5 & 3     | 1       |
+| |        | OR              | 5 \| 3     | 7       |
+| ^        | XOR             | 5 ^ 3     | 6       |
+| ~        | NOT             | ~5        | -6      |
+| <<       | Left Shift      | 5 << 1    | 10      |
+| >>       | Right Shift     | 5 >> 1    | 2       |
+
+---
+
+## ✅ 6. Identity Operators
+
+x = [1, 2]
+y = x
+z = [1, 2]
+
+print(x is y)  # True
+print(x is z)  # False
+
+
+## ✅ 7. Membership Operators
+print('a' in 'apple')       # True
+print('z' not in 'apple')   # True
