@@ -1,0 +1,357 @@
+
+## 🔹 What is a Function?
+
+- A **function** allows you to **organize code** into blocks that can be reused.
+- Functions help improve **code readability**, **reusability**, and **modularity**.
+- You can define your own functions (user-defined), or use built-in ones (like `print()`, `len()`).
+
+---
+
+## ✅ Function Types
+
+| Type                    | Description                                 |
+|-------------------------|---------------------------------------------|
+| Built-in Functions      | Predefined in Python (e.g., `len()`, `type()`) |
+| User-defined Functions  | Created using `def` keyword                  |
+| Lambda Functions        | Anonymous, one-line functions                |
+| Recursive Functions     | Function that calls itself                  |
+
+---
+
+## ✅ 1. Defining a Function (User-defined)
+
+### 🔸 Syntax:
+```python
+def function_name(parameters):
+    """docstring (optional)"""
+    # code block
+    return value  # optional
+````
+
+### 🔸 Example:
+
+```python
+def greet(name):
+    print(f"Hello, {name}!")
+
+greet("Drashti")
+```
+
+---
+
+## ✅ 2. Return Statement
+
+* Functions can return values using `return`.
+* Once `return` is executed, the function exits.
+
+```python
+def add(a, b):
+    return a + b
+
+result = add(5, 3)
+print(result)  # Output: 8
+```
+
+---
+
+## ✅ 3. Function Arguments
+
+Python supports several types of arguments:
+
+### 🔸 a) Positional Arguments
+
+```python
+def greet(name, age):
+    print(f"{name} is {age} years old.")
+
+greet("Drashti", 21)
+```
+
+### 🔸 b) Default Arguments
+
+```python
+def greet(name="User"):
+    print(f"Hello, {name}!")
+
+greet()          # Hello, User
+greet("Aarav")   # Hello, Aarav
+```
+
+### 🔸 c) Keyword Arguments
+
+```python
+def intro(name, city):
+    print(f"{name} lives in {city}.")
+
+intro(city="Surat", name="Drashti")
+```
+
+### 🔸 d) Variable-length Arguments
+
+#### `*args` (tuple of arguments):
+
+```python
+def total(*args):
+    return sum(args)
+
+print(total(1, 2, 3, 4))  # Output: 10
+```
+
+#### `**kwargs` (dictionary of keyword arguments):
+
+```python
+def show_info(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+
+show_info(name="Drashti", age=21)
+```
+
+---
+
+## ✅ 4. Docstring (Function Documentation)
+
+```python
+def greet(name):
+    """This function greets a person."""
+    print(f"Hello, {name}!")
+
+print(greet.__doc__)
+```
+
+---
+
+## ✅ 5. Scope and Lifetime of Variables
+
+### 🔸 Local Variable:
+
+Defined inside a function — only accessible there.
+
+```python
+def func():
+    x = 10  # local
+    print(x)
+```
+
+### 🔸 Global Variable:
+
+Defined outside all functions — accessible everywhere.
+
+```python
+x = 5
+
+def show():
+    print(x)  # global
+
+show()
+```
+
+### 🔸 Using `global` keyword:
+
+```python
+x = 10
+
+def change():
+    global x
+    x = 20
+
+change()
+print(x)  # Output: 20
+```
+
+---
+
+## ✅ 6. Lambda Functions
+
+* A **lambda** is a small, anonymous function.
+* Syntax: `lambda arguments: expression`
+
+```python
+square = lambda x: x * x
+print(square(5))  # Output: 25
+```
+
+```python
+add = lambda a, b: a + b
+print(add(3, 4))  # Output: 7
+```
+
+---
+
+## ✅ 7. Recursion (Function calling itself)
+
+```python
+def factorial(n):
+    if n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+print(factorial(5))  # Output: 120
+```
+
+---
+
+## ✅ 8. Built-in Functions Examples
+
+| Function   | Description                   |
+| ---------- | ----------------------------- |
+| `len()`    | Returns length                |
+| `sum()`    | Sum of iterable               |
+| `type()`   | Data type of variable         |
+| `sorted()` | Sorts iterable                |
+| `max()`    | Maximum value                 |
+| `min()`    | Minimum value                 |
+| `range()`  | Generates sequence of numbers |
+| `print()`  | Displays output               |
+| `input()`  | Takes input from user         |
+
+---
+
+## ✅ 9. Function as Argument
+
+```python
+def greet(name):
+    return f"Hello, {name}"
+
+def display(func):
+    print(func("Drashti"))
+
+display(greet)
+```
+
+---
+
+## ✅ 10. Nested Functions
+
+```python
+def outer():
+    def inner():
+        print("Inside inner function")
+    print("Inside outer function")
+    inner()
+
+outer()
+```
+## ✅ 11. Function Arguments
+🔸 d) Variable-length Arguments – *args and **kwargs
+Python allows flexible function definitions using:
+
+Symbol	Used For	Data Type
+*args	Variable number of positional arguments	tuple
+**kwargs	Variable number of keyword arguments	dictionary
+
+
+🔹 *args (Non-keyword variable arguments)
+Use when you don’t know how many positional arguments will be passed.
+
+Internally, args behaves like a tuple.
+
+def print_numbers(*args):
+    print("All arguments:", args)
+    for number in args:
+        print(number)
+
+print_numbers(1, 2, 3, 4)
+✅ Output:
+
+All arguments: (1, 2, 3, 4)
+1
+2
+3
+4
+
+
+🔹 **kwargs (Keyword variable arguments)
+Use when you don’t know how many named arguments will be passed.
+
+Internally, kwargs behaves like a dictionary.
+
+def show_details(**kwargs):
+    print("All key-value pairs:", kwargs)
+    for key, value in kwargs.items():
+        print(f"{key} => {value}")
+
+show_details(name="Drashti", age=21, course="Python")
+
+✅ Output:
+pgsql
+Copy
+Edit
+
+All key-value pairs: {'name': 'Drashti', 'age': 21, 'course': 'Python'}
+name => Drashti
+age => 21
+course => Python
+
+
+✅ Combining *args and **kwargs
+def mix_args(*args, **kwargs):
+    print("Args:", args)
+    print("Kwargs:", kwargs)
+
+mix_args(1, 2, name="Drashti", role="Developer")
+✅ output:
+Args: (1, 2)
+Kwargs: {'name': 'Drashti', 'role': 'Developer'}
+
+
+
+✅ Using * and ** when calling functions
+You can also use * and ** to unpack values when calling a function.
+1) exampe 
+
+def add(a, b, c):
+    print(a + b + c)
+
+nums = [1, 2, 3]
+add(*nums)   # unpack list as arguments
+---
+
+2) example
+
+def profile(name, age):
+    print(f"{name} is {age} years old")
+
+data = {'name': 'Drashti', 'age': 21}
+profile(**data)  # unpack dict as keyword arguments
+
+---
+
+## 🧪 Real-World Example
+
+```python
+def calculate_bill(price, tax=0.1):
+    total = price + (price * tax)
+    return total
+
+print(calculate_bill(100))  # Output: 110.0
+
+-----------------------------------
+✅ * in function definition to enforce keyword-only arguments
+
+def person_info(name, *, age, city):
+    print(f"{name} is {age} years old and lives in {city}.")
+
+# person_info("Drashti", 21, "Surat")   ❌ Error
+person_info("Drashti", age=21, city="Surat")  # ✅
+📌 Anything after * must be passed as a keyword argument.
+
+
+```
+
+---
+
+## 📝 Summary Table
+
+| Feature              | Supported |
+| -------------------- | --------- |
+| Parameters/Arguments | ✅ Yes     |
+| Return Values        | ✅ Yes     |
+| Default Parameters   | ✅ Yes     |
+| Variable Arguments   | ✅ Yes     |
+| Nested Functions     | ✅ Yes     |
+| Lambda Functions     | ✅ Yes     |
+| Recursion            | ✅ Yes     |
+| Closures             | ✅ Yes     |
+
