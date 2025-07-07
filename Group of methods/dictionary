@@ -1,0 +1,201 @@
+
+In Python, a **dictionary** is an **unordered**, **mutable**, and **indexed** collection of key-value pairs.
+
+---
+
+## 🔹 What is a Dictionary?
+
+- A dictionary stores **data in key-value pairs**.
+- Keys must be **unique** and **immutable** (e.g., strings, numbers, tuples).
+- Values can be of **any data type**, and **can repeat**.
+- Dictionaries are **mutable**, meaning you can add, modify, or delete key-value pairs.
+
+---
+
+## ✅ Syntax
+
+```python
+# Using curly braces
+student = {
+    "name": "Drashti",
+    "age": 21,
+    "course": "Python"
+}
+
+# Using dict() constructor
+person = dict(name="Aarav", age=25)
+
+# Empty dictionary
+empty_dict = {}
+````
+
+---
+
+## 📎 Accessing and Modifying Elements
+
+```python
+student = {"name": "Drashti", "age": 21}
+
+# Access value
+print(student["name"])          # Drashti
+
+# Modify value
+student["age"] = 22
+
+# Add new key-value pair
+student["gender"] = "Female"
+
+# Remove a key
+del student["gender"]
+```
+
+---
+
+## 🗃️ Dictionary Properties
+
+| Property                | Dictionary |
+| ----------------------- | ---------- |
+| Ordered (Python 3.7+)   | ✅ Yes      |
+| Mutable                 | ✅ Yes      |
+| Allows duplicate keys   | ❌ No       |
+| Allows duplicate values | ✅ Yes      |
+
+---
+
+## 🔁 Looping Through Dictionary
+
+```python
+person = {"name": "Drashti", "age": 21}
+
+# Loop keys
+for key in person:
+    print(key, person[key])
+
+# Loop values
+for value in person.values():
+    print(value)
+
+# Loop key-value pairs
+for key, value in person.items():
+    print(f"{key} → {value}")
+```
+
+---
+
+## 🔧 Dictionary Methods (✅ All Included)
+
+| Method                      | Description                                               | Example                     |
+| --------------------------- | --------------------------------------------------------- | --------------------------- |
+| `.get(key[, default])`      | Returns value of key, or default if key not found         | `d.get('name', 'N/A')`      |
+| `.keys()`                   | Returns a view of all keys                                | `d.keys()`                  |
+| `.values()`                 | Returns a view of all values                              | `d.values()`                |
+| `.items()`                  | Returns view of key-value pairs as tuples                 | `d.items()`                 |
+| `.pop(key[, default])`      | Removes key and returns its value                         | `d.pop('age')`              |
+| `.popitem()`                | Removes and returns last inserted key-value pair          | `d.popitem()`               |
+| `.update([other])`          | Updates dictionary with key-value pairs from another dict | `d.update({"gender": "F"})` |
+| `.clear()`                  | Removes all items                                         | `d.clear()`                 |
+| `.copy()`                   | Returns shallow copy                                      | `new_dict = d.copy()`       |
+| `.setdefault(key[, val])`   | Returns value if key exists; sets to val if not           | `d.setdefault('age', 22)`   |
+| `dict.fromkeys(seq[, val])` | Creates new dict with keys from `seq`, all values `val`   | `dict.fromkeys([1,2], 0)`   |
+
+---
+
+## 🔄 Dictionary Operations
+
+| Operation   | Syntax/Example                    | Description            |
+| ----------- | --------------------------------- | ---------------------- |
+| Access      | `d["key"]`                        | Get value by key       |
+| Insert      | `d["new_key"] = val`              | Add new key-value      |
+| Update      | `d["key"] = new_val`              | Change value           |
+| Delete      | `del d["key"]`                    | Remove key             |
+| Membership  | `"key" in d`                      | Check if key exists    |
+| Length      | `len(d)`                          | Total number of keys   |
+| Merge dicts | `d1.update(d2)` or `{**d1, **d2}` | Merge two dictionaries |
+
+---
+
+## 🧠 Dictionary Comprehension
+
+```python
+# Square numbers
+squares = {x: x**2 for x in range(5)}  # {0:0, 1:1, ..., 4:16}
+
+# Filtered dictionary
+even = {k: v for k, v in squares.items() if v % 2 == 0}
+```
+
+---
+
+## 🔐 Nested Dictionary
+
+```python
+students = {
+    "101": {"name": "Drashti", "age": 21},
+    "102": {"name": "Aarav", "age": 22}
+}
+
+print(students["101"]["name"])   # Drashti
+```
+
+---
+
+## 🧊 Immutable Keys Only
+
+```python
+# Valid keys
+d = {
+    "name": "Drashti",
+    1: "int key",
+    (2, 3): "tuple key"
+}
+
+# ❌ List as a key → Error
+# d[[1,2]] = "invalid"   # TypeError
+```
+
+---
+
+## 📘 Use Cases of Dictionary
+
+* Store structured data (e.g., student records, product catalogs).
+* Efficient key-based lookups.
+* Mapping or configuration data.
+* JSON parsing.
+
+---
+
+## 🧪 Practical Example
+
+```python
+inventory = {
+    "apples": 10,
+    "oranges": 5,
+    "bananas": 8
+}
+
+# Add item
+inventory["grapes"] = 12
+
+# Update
+inventory["apples"] += 5
+
+# Delete
+inventory.pop("oranges")
+
+# Loop
+for fruit, qty in inventory.items():
+    print(f"{fruit}: {qty}")
+```
+
+---
+
+## ✅ Summary Table
+
+| Feature           | Dictionary        |
+| ----------------- | ----------------- |
+| Ordered           | ✅ Yes (3.7+)      |
+| Mutable           | ✅ Yes             |
+| Allows Duplicates | ✅ Values only     |
+| Access via        | Keys              |
+| Nesting Support   | ✅ Yes             |
+| Typical Use Case  | Key-Value mapping |
